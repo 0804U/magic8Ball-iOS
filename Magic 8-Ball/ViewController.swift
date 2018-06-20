@@ -10,34 +10,41 @@ import UIKit
 
 class ViewController: UIViewController {
     var randomBallShake : Int = 0
+
+    var ballArray = ["ball1", "ball2", "ball3", "ball4", "ball5"]
     
     @IBOutlet weak var ballImage1: UIImageView!
     @IBOutlet var ballImage: UIView!
 
-    var ballArray = ["ball1", "ball2", "ball3", "ball4", "ball5"]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+   
+        shakeBall()
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
 
     @IBAction func shakeActionButton(_ sender: UIButton) {
+    
         shakeBall()
+    
     }
     
     func shakeBall() {
-        randomBallShake = Int(arc4random_uniform(4))
+       
+        randomBallShake = Int(arc4random_uniform(5))
         
         ballImage1.image = UIImage(named: ballArray[randomBallShake])
     }
     
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        
         shakeBall()
+    
     }
     
 }

@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     }
     
     func shakeBall() {
-        randomBallShake = Int(arc4random_uniform(5))
+        randomBallShake = Int(arc4random_uniform(4))
         
         ballImage1.image = UIImage(named: ballArray[randomBallShake])
     }
